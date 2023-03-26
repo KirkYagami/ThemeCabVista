@@ -1,0 +1,68 @@
+{% load static%} {% load static tailwind_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      body {
+        background-image: url("{% static 'images/success.gif' %}");
+        background-size: cover;
+        background-position: center;
+        animation-name: celebrate;
+        animation-duration: 5s;
+        animation-timing-function: linear;
+        animation-delay: 2s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+      }
+
+      /* Adjust background size and position for small screens */
+      @media (max-width: 640px) {
+        body {
+          background-size: contain;
+          background-position: top;
+        }
+      }
+
+      @keyframes celebrate {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+    </style>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You for Booking Your Ride</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{% static 'images/favicon-32x32.png' %}"
+    />
+    {% tailwind_css %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+    <script src="{% static 'js/script.js' %}" defer></script>
+    {% tailwind_css %}
+  </head>
+  <body
+    class="min-h-screen flex flex-col justify-center items-center bg-gray-100 text-center"
+  >
+    <h1 class="text-3xl font-bold mb-8">
+      Thank You for Booking Your Ride with Us!
+    </h1>
+
+    <div class="flex items-center justify-center w-full">
+      <a
+        href="{% url 'home' %}"
+        class="inline-block py-2 px-6 text-sm font-semibold text-white bg-softBlue rounded shadow-md border-2 border-softBlue hover:bg-white hover:text-softBlue w-40"
+      >
+        Return to home
+      </a>
+    </div>
+  </body>
+</html>

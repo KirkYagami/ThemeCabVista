@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, HttpResponseRedirect
+
 from django.http import HttpResponse
 from django.core.mail import BadHeaderError, send_mail
 
@@ -41,12 +42,19 @@ def ride(request):
                 send_mail(subject, message, email, ['joydenver01@gmail.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
-            return HttpResponse('Thank you for booking your ride with us!')
+            return HttpResponseRedirect('/success/')
         else:
         # In reality we'd use a form class
         # to get proper validation errors.
             return HttpResponse('Make sure all fields are entered and valid.')
     return render(request, 'RideVista/ride.html')
 
+def success(request):
+    return render(request, 'RideVista/response.html')
+
+
 def home(request):
     return render(request, 'RideVista/index.html')
+
+
+
