@@ -3,6 +3,7 @@ from django.shortcuts import render, HttpResponseRedirect
 from django.http import HttpResponse
 from django.core.mail import BadHeaderError, send_mail
 
+
 def ride(request):
     if request.method == 'POST':
         name = request.POST.get('name', '')

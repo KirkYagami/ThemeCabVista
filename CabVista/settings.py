@@ -134,6 +134,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 
+CSRF_TRUSTED_ORIGINS = ['https://ridevista.up.railway.app']
 
 
 
