@@ -1,0 +1,182 @@
+{% load static tailwind_tags %} {% load static %}
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <script src="{% static 'js/script.js' %}" defer></script>
+    {% tailwind_css %}
+    <title>Ride Vista Cabs</title>
+  </head>
+  <body class="overflow-x-hidden">
+    <nav class="container relative mx-auto p-6">
+      <!-- Flex Container For Nav Items -->
+      <div
+        class="flex items-center justify-between space-x-20 my-6 cursor-pointer"
+      >
+        <!-- Logo -->
+        <div class="z-30">
+          <a href="{% url 'home' %}">
+            <img src="{% static 'images/RVC_Logo.svg' %}" alt="" id="logo" />
+          </a>
+        </div>
+
+        <!-- Menu Items -->
+        <div
+          class="hidden items-center space-x-10 uppercase text-grayishBlue md:flex"
+        >
+          <a href="{% url 'home' %}" class="tracking-widest hover:text-softRed"
+            >Services</a
+          >
+          <!-- <a href="{% url 'home' %}" class="tracking-widest hover:text-softRed"
+            >About</a
+          > -->
+          <a href="{% url 'home' %}" class="tracking-widest hover:text-softRed"
+            >FAQ</a
+          >
+
+          <a
+            href="{% url 'ride' %}"
+            class="px-8 py-2 text-white bg-softRed border-2 border-softRed rounded-lg shadow-md hover:text-softRed hover:bg-white"
+            >Book Your Cab</a
+          >
+        </div>
+        <!-- Hamburger Button -->
+        <button
+          id="menu-btn"
+          class="z-30 block md:hidden focus:outline-none hamburger"
+        >
+          <span class="hamburger-top"></span>
+          <span class="hamburger-middle"></span>
+          <span class="hamburger-bottom"></span>
+        </button>
+      </div>
+      <!-- Mobile Menu -->
+      <div
+        id="menu"
+        class="fixed inset-0 z-20 hidden flex-col items-center self-end w-full h-full m-h-screen px-6 py-1 pt-24 pb-4 tracking-widest text-white uppercase divide-y divide-gray-500 opacity-90 bg-veryDarkBlue"
+      >
+        <div class="w-full py-3 text-center">
+          <a href="{% url 'home' %}" class="block hover:text-softRed"
+            >Services</a
+          >
+        </div>
+        <!-- <div class="w-full py-3 text-center">
+          <a href="#about" class="block hover:text-softRed">About</a>
+        </div> -->
+        <div class="w-full py-3 text-center">
+          <a href="{% url 'home' %}" class="block hover:text-softRed">FAQ</a>
+        </div>
+        <div class="w-full py-3 text-center">
+          <a href="#" class="block hover:text-softRed">Book Your Ride</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Content -->
+
+    {% block content %} {% endblock %}
+
+    <!-- Footer -->
+    <footer class="py-16 bg-veryDarkBlue">
+      <!-- Footer Flex Container -->
+      <div
+        class="container flex flex-col items-center justify-between mx-auto space-y-16 px-6 md:flex-row md:space-y-0"
+      >
+        <!-- Logo/Menu Container -->
+        <div
+          class="flex flex-col items-center justify-between space-y-8 text-lg font-light md:flex-row md:space-y-0 md:space-x-14 text-grayishBlue"
+        >
+          <img
+            src="{% static 'images/RideVistacabs_FooterLogo.svg' %}"
+            alt=""
+            class="mb-1"
+          />
+
+          <a href="{% url 'home' %}" class="uppercase hover:text-softRed"
+            >Services</a
+          >
+          <a href="{% url 'home' %}" class="uppercase hover:text-softRed"
+            >FAQ</a
+          >
+
+          <!-- Address Container -->
+          <div
+            class="flex flex-col items-center justify-between space-y-2 md:flex-row md:space-y-0 md:space-x-2"
+          >
+            <img
+              src="{% static 'images/icon-location.svg' %}"
+              alt=""
+              class="h-6 ficon"
+            />
+            <p class="text-grayishBlue">
+              Nijjer Chowk Kharar, Chandigarh, Punjab 140301
+            </p>
+          </div>
+
+          <!-- Email Container -->
+          <div
+            class="flex flex-col items-center justify-between space-y-2 md:flex-row md:space-y-0 md:space-x-2"
+          >
+            <img
+              src="{% static 'images/icon-email.svg' %}"
+              alt=""
+              class="h-6 ficon"
+            />
+            <a
+              href="mailto:info@ridevistacabs.com"
+              class="text-grayishBlue hover:text-softRed"
+              >info@ridevista.com</a
+            >
+          </div>
+        </div>
+
+        <!-- Social Container -->
+        <div class="flex space-x-10">
+          <a href="#">
+            <img
+              src="{% static 'images/icon-facebook.svg' %}"
+              alt=""
+              class="h-6 ficon"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="{% static 'images/icon-twitter.svg' %}"
+              alt=""
+              class="h-6 ficon"
+            />
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function navToggle() {
+        btn.classList.toggle("open");
+        menu.classList.toggle("flex");
+        menu.classList.toggle("hidden");
+
+        if (menu.classList.contains("flex")) {
+          logo.setAttribute(
+            "src",
+            "{% static 'images/RideVistacabs_FooterLogo.svg' %}"
+          );
+        } else {
+          logo.setAttribute("src", "{% static 'images/RVC_Logo.svg' %}");
+        }
+      }
+    </script>
+  </body>
+</html>

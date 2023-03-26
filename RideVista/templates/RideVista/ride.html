@@ -1,0 +1,246 @@
+{% extends 'base.html' %} {% block content %}
+
+<head>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<div class="min-h-screen flex justify-center items-center">
+  <div class="w-full max-w-lg">
+    <h1 class="text-3xl font-bold text-center mb-8">Book Your Ride Here</h1>
+    <form class="bg-white rounded-lg shadow-lg p-6" action="" method="POST">
+      {% csrf_token %}
+      <div class="grid grid-cols-2 gap-4">
+        <div class="">
+          <label class="block mb-2 font-bold text-gray-700" for="name"
+            >Name</label
+          >
+          <input
+            class="w-full px-3 py-2 placeholder-gray-400 border rounded-lg focus:outline-none focus:shadow-outline"
+            id="name"
+            type="text"
+            name="name"
+            required
+          />
+        </div>
+        <div class="">
+          <label class="block mb-2 font-bold text-gray-700" for="phone"
+            >Phone</label
+          >
+          <input
+            class="w-full px-3 py-2 placeholder-gray-400 border rounded-lg focus:outline-none focus:shadow-outline"
+            id="phone"
+            type="tel"
+            name="phone"
+            pattern="[0-9]{10}"
+            required
+          />
+        </div>
+      </div>
+      <div class="mt-4">
+        <label class="block mb-2 font-bold text-gray-700" for="email"
+          >Email</label
+        >
+        <input
+          class="w-full px-3 py-2 placeholder-gray-400 border rounded-lg focus:outline-none focus:shadow-outline"
+          id="email"
+          type="text"
+          name="email"
+          required
+        />
+      </div>
+      <div class="mt-4">
+        <label
+          class="block mb-2 font-bold text-gray-700"
+          for="number_of_travelers"
+          >Number of Travelers</label
+        >
+        <input
+          class="w-full px-3 py-2 placeholder-gray-400 border rounded-lg focus:outline-none focus:shadow-outline"
+          id="number_of_travelers"
+          type="number"
+          name="number_of_travelers"
+          required
+        />
+      </div>
+      <div class="grid grid-cols-2 gap-4 mt-4">
+        <div class="">
+          <label class="block mb-2 font-bold text-gray-700" for="cab_type"
+            >Type of Vehicle</label
+          >
+          <select
+            class="w-full px-3 py-2 placeholder-gray-400 border rounded-lg focus:outline-none focus:shadow-outline"
+            name="cab_type"
+            id="cab_type"
+            required
+          >
+            <option value="" selected>Select</option>
+
+            <option value="Coupe">Coupe</option>
+            <option value="Hatchback">Hatchback</option>
+            <option value="Pickup Truck">Pickup Truck</option>
+            <option value="Sedan">Sedan</option>
+            <option value="Sports Car">Sports Car</option>
+            <option value="SUV">SUV</option>
+            <option value="Tempo Traveller">Tempo Traveller</option>
+          </select>
+        </div>
+        <div class="">
+          <label class="block mb-2 font-bold text-gray-700" for="from_location"
+            >From Location</label
+          >
+          <select
+            class="w-full px-3 py-2 placeholder-gray-400 border rounded-lg focus:outline-none focus:shadow-outline"
+            name="from_location"
+            id="from_location"
+            required
+          >
+            <option selected>Select</option>
+            <option value="Agra">Agra</option>
+            <option value="Amritsar">Amritsar</option>
+            <option value="Chandigarh">Chandigarh</option>
+            <option value="Dehradun">Dehradun</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Himachal">Himachal</option>
+            <option value="Jaipur">Jaipur</option>
+            <option value="Jammu">Jammu</option>
+            <option value="Kashmir">Kashmir</option>
+            <option value="Leh">Leh</option>
+
+            <option value="Manali">Manali</option>
+            <option value="Nainital">Nainital</option>
+            <option value="Shimla">Shimla</option>
+            <option value="Udaipur">Udaipur</option>
+          </select>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-4 mt-4">
+        <div class="">
+          <label class="block mb-2 font-bold text-gray-700" for="cab_type"
+            >Pickup Location</label
+          >
+          <select
+            class="w-full px-3 py-2 placeholder-gray-400 border rounded-lg focus:outline-none focus:shadow-outline"
+            name="pickup_location"
+            id="pickup_location"
+            required
+          >
+            <option selected>Select</option>
+            <option value="Chandigarh">Chandigarh</option>
+            <option value="Jammu">Jammu</option>
+            <option value="Udhampur">Udhampur</option>
+            <option value="Himachal">Himachal</option>
+          </select>
+        </div>
+        <div class="">
+          <label class="block mb-2 font-bold text-gray-700" for="from_location"
+            >To Location</label
+          >
+          <select
+            class="w-full px-3 py-2 placeholder-gray-400 border rounded-lg focus:outline-none focus:shadow-outline"
+            name="to_location"
+            id="to_location"
+            required
+          >
+            <option selected>Select</option>
+            <option value="Agra">Agra</option>
+            <option value="Amritsar">Amritsar</option>
+            <option value="Chandigarh">Chandigarh</option>
+            <option value="Dehradun">Dehradun</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Himachal">Himachal</option>
+            <option value="Jaipur">Jaipur</option>
+            <option value="Jammu">Jammu</option>
+            <option value="Kashmir">Kashmir</option>
+            <option value="Leh">Leh</option>
+
+            <option value="Manali">Manali</option>
+            <option value="Nainital">Nainital</option>
+            <option value="Shimla">Shimla</option>
+            <option value="Udaipur">Udaipur</option>
+          </select>
+        </div>
+      </div>
+      <div class="flex flex-row justify-center items-center space-x-6 mt-5">
+        <label for="one_way" class="inline-flex items-center cursor-pointer">
+          <input
+            id="one_way"
+            name="one_way_or_two_way"
+            type="radio"
+            value="one_way"
+            class="h-5 w-5 text-blue-500 border-gray-300 rounded-full focus:ring-blue-400"
+          />
+          <span class="ml-2 text-gray-700 font-medium">One Way</span>
+        </label>
+        <label for="two_way" class="inline-flex items-center cursor-pointer">
+          <input
+            id="two_way"
+            name="one_way_or_two_way"
+            type="radio"
+            value="two_way"
+            class="h-5 w-5 text-blue-500 border-gray-300 rounded-full focus:ring-blue-400"
+          />
+          <span class="ml-2 text-gray-700 font-medium">Two Way</span>
+        </label>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4 mt-4">
+        <div class="">
+          <label class="block mb-2 font-bold text-gray-700" for="cab_type"
+            >Pickup Date</label
+          >
+          <input
+            id="pickup_date"
+            name="pickup_date"
+            type="date"
+            class="w-full px-3 py-2 placeholder-gray-400 border rounded-lg focus:outline-none focus:shadow-outline"
+            required
+          />
+        </div>
+        <div class="">
+          <label class="block mb-2 font-bold text-gray-700" for="return_date"
+            >Return Date</label
+          >
+          <input
+            id="return_date"
+            name="return_date"
+            type="date"
+            class="w-full px-3 py-2 placeholder-gray-400 border rounded-lg focus:outline-none focus:shadow-outline"
+            required
+          />
+        </div>
+      </div>
+      <div class="w-full max-w-lg flex justify-center">
+        <button
+          class="w-2/3 mt-5 text-4xl max-w-l flex flex-row justify-center p-4 text-sm font-semibold text-white bg-blue-500 rounded shadow-md border-2 border-blue-500 hover:bg-gray-100 hover:text-blue-500 transition-colors duration-300 ease-in-out cursor-pointer"
+          type="submit"
+        >
+          Book Your Cab
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  // Get the current date in the format "YYYY-MM-DD"
+  const currentDate = new Date().toISOString().split("T")[0];
+
+  // Set the minimum date in the input field to the current date
+  document.getElementById("pickup_date").setAttribute("min", currentDate);
+
+  const oneWayRadio = document.getElementById("one_way");
+  const returnDateInput = document.getElementById("return_date");
+  oneWayRadio.addEventListener("change", () => {
+    if (oneWayRadio.checked) {
+      returnDateInput.disabled = true;
+    }
+  });
+
+  const twoWayRadio = document.getElementById("two_way");
+  twoWayRadio.addEventListener("change", () => {
+    if (twoWayRadio.checked) {
+      returnDateInput.disabled = false;
+    }
+  });
+</script>
+
+{% endblock %}

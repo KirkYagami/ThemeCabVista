@@ -1,0 +1,582 @@
+{% load static %} {% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="{% static 'images/favicon-32x32.png' %}"
+    />
+    {% tailwind_css %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+    <script src="{% static 'js/script.js' %}" defer></script>
+    <title>Ride Vista Cabs</title>
+    <script
+      src="https://kit.fontawesome.com/be6b352675.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="overflow-x-hidden">
+    <nav class="container relative mx-auto p-6">
+      <!-- Flex Container For Nav Items -->
+      <div
+        class="flex items-center justify-between space-x-20 my-6 cursor-pointer"
+      >
+        <!-- Logo -->
+        <div class="z-30">
+          <a href="{% url 'home' %}">
+            <img
+              src="{% static 'images/RVC_Logo.svg' %}"
+              alt="logo"
+              id="logo"
+            />
+          </a>
+        </div>
+
+        <!-- Menu Items -->
+        <div
+          class="hidden items-center space-x-10 uppercase text-grayishBlue md:flex"
+        >
+          <a href="#services" class="tracking-widest hover:text-softRed"
+            >Services</a
+          >
+          <!-- <a href="#about" class="tracking-widest hover:text-softRed">About</a> -->
+          <a href="#faq" class="tracking-widest hover:text-softRed">FAQ</a>
+
+          <a
+            href="{% url 'ride' %}"
+            class="px-8 py-2 text-white bg-softRed border-2 border-softRed rounded-lg shadow-md hover:text-softRed hover:bg-white"
+            >Book Your Cab</a
+          >
+        </div>
+        <!-- Hamburger Button -->
+        <button
+          id="menu-btn"
+          class="z-30 block md:hidden focus:outline-none hamburger"
+        >
+          <span class="hamburger-top"></span>
+          <span class="hamburger-middle"></span>
+          <span class="hamburger-bottom"></span>
+        </button>
+      </div>
+      <!-- Mobile Menu -->
+      <div
+        id="menu"
+        class="fixed inset-0 z-20 hidden flex-col items-center self-end w-full h-full m-h-screen px-6 py-1 pt-24 pb-4 tracking-widest text-white uppercase divide-y divide-gray-500 opacity-90 bg-veryDarkBlue"
+      >
+        <div class="w-full py-3 text-center">
+          <a href="#services" class="block hover:text-softRed">Services</a>
+        </div>
+        <!-- <div class="w-full py-3 text-center">
+          <a href="#about" class="block hover:text-softRed">About</a>
+        </div> -->
+        <div class="w-full py-3 text-center">
+          <a href="#faq" class="block hover:text-softRed">FAQ</a>
+        </div>
+        <div class="w-full py-3 text-center">
+          <a href="{% url 'ride'%}" class="block hover:text-softRed"
+            >Book Your Ride</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+      <!-- Container For Image & Content -->
+      <div
+        class="container flex flex-col-reverse mx-auto p-6 lg:flex-row lg:mb-0"
+      >
+        <!-- Content -->
+        <div class="flex flex-col space-y-10 lg:mt-16 lg:w-1/2">
+          <h1
+            class="text-3xl font-semibold text-center lg:text-6xl lg:text-left"
+          >
+            Your Reliable Travel Companion
+          </h1>
+          <p
+            class="max-w-md mx-auto text-lg text-center text-gray-400 lg:text-2xl lg:text-left lg:mt-0 lg:mx-0"
+          >
+            Get where you need to go with Ride Vista Cabs. Our comfortable,
+            reliable cabs and professional drivers make travel stress-free. Book
+            now for the ultimate convenience.
+          </p>
+
+          <!-- Buttons Container -->
+          <div
+            class="flex items-center justify-center w-full space-x-4 lg:justify-start"
+          >
+            <a
+              href="{% url 'ride'%}"
+              class="p-4 text-sm font-semibold text-white bg-softBlue rounded shadow-md border-2 border-softBlue md:text-base hover:bg-white hover:text-softBlue"
+              >Book Your Ride</a
+            >
+
+            <a
+              href="tel: 70060035209"
+              class="p-4 text-sm font-semibold text-black bg-gray-300 rounded shadow-md border-2 border-gray-300 md:text-base hover:bg-white hover:text-gray-600"
+            >
+              <i class="fa-solid fa-phone"></i> Call Us
+            </a>
+          </div>
+        </div>
+
+        <!-- Image -->
+        <div class="relative mx-auto lg:mx-0 lg:mb-0 lg:w-1/2">
+          <div class="bg-hero"></div>
+          <img
+            src="{% static 'images/Hero-1.svg' %}"
+            alt=""
+            class="relative z-10 lg:top-24 xl:top-0 overflow-x-visible"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Heading -->
+    <section id="services">
+      <div class="container mx-auto mt-16 px-6">
+        <h2 class="mb-6 text-4xl font-semibold text-center">Services</h2>
+        <p class="max-w-md mx-auto text-center text-grayishBlue">
+          Ride Vista Cabs offers reliable and comfortable transportation
+          services for your travel needs. Our well-maintained cabs and
+          professional drivers ensure a safe and comfortable journey. We provide
+          outstation services, roundtrip services, cab services to Leh, and
+          various North Indian cities. Book with us today for affordable and
+          hassle-free travel experiences.
+        </p>
+      </div>
+    </section>
+
+    <!-- Services Tabs -->
+    <section id="tabs">
+      <!-- Tabs/Panels Container -->
+      <div class="container relative mx-auto my-6 mb-32 mt-12 px-6">
+        <div class="bg-tabs"></div>
+        <!-- Tabs Flex Container -->
+        <div
+          class="flex flex-col justify-center max-w-xl mx-auto mb-6 border-b md:space-x-10 md:flex-row"
+        >
+          <!-- Tab 1 -->
+          <div
+            class="flex justify-center text-center cursor-pointer text-gray-600 border-b md:border-b-0 hover:text-softRed md:w-1/3 tab"
+            data-target="panel-1"
+          >
+            <div class="py-5 border-b-4 border-softRed" data-target="panel-1">
+              Outstation Services
+            </div>
+          </div>
+
+          <!-- Tab 2 -->
+          <div
+            class="flex justify-center text-center cursor-pointer text-gray-600 border-b md:border-b-0 hover:text-softRed md:w-1/3 tab"
+            data-target="panel-2"
+          >
+            <div class="py-5" data-target="panel-2">Cab Services to Leh</div>
+          </div>
+
+          <!-- Tab 3 -->
+          <div
+            class="flex justify-center text-center cursor-pointer text-gray-600 border-b md:border-b-0 hover:text-softRed md:w-1/3 tab"
+            data-target="panel-3"
+          >
+            <div class="py-5" data-target="panel-3">
+              Cab Services to North Indian Cities
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab Panels -->
+        <div id="panels" class="container mx-auto">
+          <!-- Panel 1 -->
+          <div
+            class="flex flex-col py-5 md:flex-row md:space-x-7 panel panel-1"
+          >
+            <!-- Panel Image -->
+            <div class="flex justify-center md:w-1/2">
+              <img
+                src="{% static 'images/OutstationServices.svg' %}"
+                alt=""
+                class="relative z-10"
+              />
+            </div>
+            <!-- Panel Content -->
+            <div class="flex flex-col space-y-8 md:w-1/2">
+              <h3
+                class="mt-32 text-3xl font-semibold text-center md:mt-0 md:text-left"
+              >
+                Outstation Services
+              </h3>
+              <p class="max-w-md text-center text-grayishBlue md:text-left">
+                Looking to get away from the city? Ride Vista Cabs offers
+                reliable and comfortable outstation services to help you reach
+                your destination with ease. Our well-maintained cabs and
+                professional drivers will ensure a safe and comfortable journey.
+              </p>
+              <div class="mx-auto md:mx-0">
+                <a
+                  href="{% url 'ride'%}"
+                  class="px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
+                  >Book your ride</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 2 -->
+          <div
+            class="flex flex-col hidden py-5 md:flex-row md:space-x-7 panel panel-2"
+          >
+            <!-- Panel Image -->
+            <div class="flex justify-center md:w-1/2">
+              <img
+                src="{% static 'images/CabServicesToLeh.svg' %}"
+                alt=""
+                class="relative z-10"
+              />
+            </div>
+            <!-- Panel Content -->
+            <div class="flex flex-col space-y-8 md:w-1/2">
+              <h3
+                class="mt-14 text-3xl font-semibold text-center md:mt-0 md:text-left"
+              >
+                Cab Services to Leh
+              </h3>
+              <p class="max-w-md text-center text-grayishBlue md:text-left">
+                Explore the scenic beauty of Leh with Ride Vista Cabs. Our cab
+                services to Leh offer a comfortable and convenient way to
+                discover the picturesque city and its surroundings.
+              </p>
+              <div class="mx-auto md:mx-0">
+                <a
+                  href="{% url 'ride'%}"
+                  class="px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
+                  >Book your ride</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Panel 3 -->
+          <div
+            class="flex flex-col hidden py-5 md:flex-row md:space-x-7 panel panel-3"
+          >
+            <!-- Panel Image -->
+            <div class="flex justify-center md:w-1/2">
+              <img
+                src="{% static 'images/cabServicesToNorthIndianCities.svg' %}"
+                alt=""
+                class="relative z-10"
+              />
+            </div>
+
+            <!-- Panel Content -->
+            <div class="flex flex-col space-y-8 md:w-1/2">
+              <h3
+                class="mt-14 text-3xl font-semibold text-center md:mt-0 md:text-left"
+              >
+                Cab Services to North Indian Cities
+              </h3>
+              <p class="max-w-md text-center text-grayishBlue md:text-left">
+                Experience the rich cultural heritage of North India with Ride
+                Vista Cabs. Our cab services to numerous North Indian cities,
+                including Agra, Jaipur, and Amritsar, offer a hassle-free way to
+                explore historic landmarks and tourist destinations.
+              </p>
+              <div class="mx-auto md:mx-0">
+                <a
+                  href="{% url 'ride'%}"
+                  class="px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
+                  >Book your ride</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Heading -->
+    <section id="faq">
+      <div class="container mx-auto">
+        <h2 class="mb-6 text-3xl font-semibold text-center md:text-4xl">
+          Frequently Asked Questions
+        </h2>
+        <p class="max-w-lg px-6 mx-auto text-center text-graishBlue">
+          Here are some of our FAQs. If you have any other questions you'd like
+          answered please feel free to email us.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section id="faq-accordion">
+      <!-- Main Container -->
+      <div class="container mx-auto px-6 mb-32">
+        <!-- Accordion Container -->
+        <div class="max-w-2xl m-8 mx-auto overflow-hidden">
+          <!-- Tab 1 -->
+          <div class="py-1 border-b outline-none group" tabindex="1">
+            <!-- Tab Flex Container -->
+            <div
+              class="flex items-center justify-between py-3 text-gray-500 transition duration-500 cursor-pointer group ease"
+            >
+              <!-- Tab Title -->
+              <div
+                class="transition duration-500 ease group-hover:text-red-500"
+              >
+                How do I book a Ride Vista Cab?
+              </div>
+              <!-- Arrow -->
+              <div
+                class="transition duration-500 ease group-focus:-rotate-180 group-focus:text-red-500"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12">
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    d="M1 1l8 8 8-8"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <!-- Tab Inner Content -->
+            <div
+              class="overflow-hidden transition duration-500 group-focus:max-h-screen max-h-0 ease"
+            >
+              <p class="py-2 text-justify text-gray-400">
+                You can easily book a Ride Vista Cab through our website. Simply
+                fill up the 'Book my ride' form and confirm your booking. We
+                will contact you within 15 minutes.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tab 2 -->
+          <div class="py-1 border-b outline-none group" tabindex="2">
+            <!-- Tab Flex Container -->
+            <div
+              class="flex items-center justify-between py-3 text-gray-500 transition duration-500 cursor-pointer group ease"
+            >
+              <!-- Tab Title -->
+              <div
+                class="transition duration-500 ease group-hover:text-red-500"
+              >
+                What safety measures are in place during the ride?
+              </div>
+              <!-- Arrow -->
+              <div
+                class="transition duration-500 ease group-focus:-rotate-180 group-focus:text-red-500"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12">
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    d="M1 1l8 8 8-8"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <!-- Tab Inner Content -->
+            <div
+              class="overflow-hidden transition duration-500 group-focus:max-h-screen max-h-0 ease"
+            >
+              <p class="py-2 text-justify text-gray-400">
+                At Ride Vista Cabs, your safety is our top priority. All our
+                cabs are regularly sanitized, and our drivers follow strict
+                hygiene protocols. We also offer contactless payment options for
+                a seamless and safe experience.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tab 3 -->
+          <div class="py-1 border-b outline-none group" tabindex="3">
+            <!-- Tab Flex Container -->
+            <div
+              class="flex items-center justify-between py-3 text-gray-500 transition duration-500 cursor-pointer group ease"
+            >
+              <!-- Tab Title -->
+              <div
+                class="transition duration-500 ease group-hover:text-red-500"
+              >
+                What if I need to cancel my booking?
+              </div>
+              <!-- Arrow -->
+              <div
+                class="transition duration-500 ease group-focus:-rotate-180 group-focus:text-red-500"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12">
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    d="M1 1l8 8 8-8"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <!-- Tab Inner Content -->
+            <div
+              class="overflow-hidden transition duration-500 group-focus:max-h-screen max-h-0 ease"
+            >
+              <p class="py-2 text-justify text-gray-400">
+                You can cancel your booking up to 2 hours before the scheduled
+                pick-up time without any cancellation charges. If you cancel
+                within 2 hours of the pick-up time, a cancellation fee will
+                apply.
+              </p>
+            </div>
+          </div>
+
+          <!-- Tab 4 -->
+          <div class="py-1 border-b outline-none group" tabindex="4">
+            <!-- Tab Flex Container -->
+            <div
+              class="flex items-center justify-between py-3 text-gray-500 transition duration-500 cursor-pointer group ease"
+            >
+              <!-- Tab Title -->
+              <div
+                class="transition duration-500 ease group-hover:text-red-500"
+              >
+                Can I modify my booking after it's been confirmed?
+              </div>
+              <!-- Arrow -->
+              <div
+                class="transition duration-500 ease group-focus:-rotate-180 group-focus:text-red-500"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="12">
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    d="M1 1l8 8 8-8"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <!-- Tab Inner Content -->
+            <div
+              class="overflow-hidden transition duration-500 group-focus:max-h-screen max-h-0 ease"
+            >
+              <p class="py-2 text-justify text-gray-400">
+                Yes, you can modify your booking up to 2 hours before the
+                scheduled pick-up time.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 bg-veryDarkBlue">
+      <!-- Footer Flex Container -->
+      <div
+        class="container flex flex-col items-center justify-between mx-auto space-y-16 px-6 md:flex-row md:space-y-0"
+      >
+        <!-- Logo/Menu Container -->
+        <div
+          class="flex flex-col items-center justify-between space-y-8 text-lg font-light md:flex-row md:space-y-0 md:space-x-14 text-grayishBlue"
+        >
+          <img
+            src="{% static 'images/RideVistacabs_FooterLogo.svg' %}"
+            alt=""
+            class="mb-1"
+          />
+
+          <a href="{% url 'home' %}" class="uppercase hover:text-softRed"
+            >Services</a
+          >
+          <a href="{% url 'home' %}" class="uppercase hover:text-softRed"
+            >FAQ</a
+          >
+
+          <!-- Address Container -->
+          <div
+            class="flex flex-col items-center justify-between space-y-2 md:flex-row md:space-y-0 md:space-x-2"
+          >
+            <img
+              src="{% static 'images/icon-location.svg' %}"
+              alt=""
+              class="h-6 ficon"
+            />
+            <p class="text-grayishBlue">
+              Nijjer Chowk Kharar, Chandigarh, Punjab 140301
+            </p>
+          </div>
+
+          <!-- Email Container -->
+          <div
+            class="flex flex-col items-center justify-between space-y-2 md:flex-row md:space-y-0 md:space-x-2"
+          >
+            <img
+              src="{% static 'images/icon-email.svg' %}"
+              alt=""
+              class="h-6 ficon"
+            />
+            <a
+              href="mailto:info@ridevistacabs.com"
+              class="text-grayishBlue hover:text-softRed"
+              >info@ridevista.com</a
+            >
+          </div>
+        </div>
+
+        <!-- Social Container -->
+        <div class="flex space-x-10">
+          <a href="#">
+            <img
+              src="{% static 'images/icon-facebook.svg' %}"
+              alt=""
+              class="h-6 ficon"
+            />
+          </a>
+          <a href="#">
+            <img
+              src="{% static 'images/icon-twitter.svg' %}"
+              alt=""
+              class="h-6 ficon"
+            />
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function navToggle() {
+        btn.classList.toggle("open");
+        menu.classList.toggle("flex");
+        menu.classList.toggle("hidden");
+
+        if (menu.classList.contains("flex")) {
+          logo.setAttribute(
+            "src",
+            "{% static 'images/RideVistacabs_FooterLogo.svg' %}"
+          );
+        } else {
+          logo.setAttribute("src", "{% static 'images/RVC_Logo.svg' %}");
+        }
+      }
+    </script>
+  </body>
+</html>
