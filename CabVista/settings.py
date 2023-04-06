@@ -26,7 +26,7 @@ SECRET_KEY = os.getenv('DjangoSecretKey')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://www.ridevista.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
