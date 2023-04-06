@@ -26,7 +26,7 @@ SECRET_KEY = os.getenv('DjangoSecretKey')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['ridevista.com','ridevista.up.railway.app']
+ALLOWED_HOSTS = ['ridevista.com','ridevista.up.railway.app',]
 
 
 # Application definition
@@ -133,7 +133,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 
-CSRF_TRUSTED_ORIGINS = ['https://ridevista.up.railway.app', 'https://www.ridevista.com']
+CSRF_TRUSTED_ORIGINS = ['https://www.ridevista.com']
 
 
 
