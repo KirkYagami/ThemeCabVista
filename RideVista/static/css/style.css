@@ -1153,6 +1153,26 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: hsl(231 69% 60% / var(--tw-text-opacity));
 }
 
+.border-green {
+  --tw-border-opacity: 1;
+  border-color: hsl(120 58% 42% / var(--tw-border-opacity));
+}
+
+.bg-green {
+  --tw-bg-opacity: 1;
+  background-color: hsl(120 58% 42% / var(--tw-bg-opacity));
+}
+
+.hover\:border-green:hover {
+  --tw-border-opacity: 1;
+  border-color: hsl(120 58% 42% / var(--tw-border-opacity));
+}
+
+.hover\:text-green:hover {
+  --tw-text-opacity: 1;
+  color: hsl(120 58% 42% / var(--tw-text-opacity));
+}
+
 .hover\:text-gray-600:hover {
   --tw-text-opacity: 1;
   color: rgb(75 85 99 / var(--tw-text-opacity));

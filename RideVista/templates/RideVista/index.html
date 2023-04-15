@@ -138,7 +138,7 @@
         <div class="relative mx-auto lg:mx-0 lg:mb-0 lg:w-1/2">
           <div class="bg-hero"></div>
           <img
-            src="{% static 'images/Hero-1.svg' %}"
+            src="{% static 'images/Hero-1.png' %}"
             alt=""
             class="relative z-10 lg:top-24 xl:top-0 overflow-x-visible"
           />
@@ -154,7 +154,7 @@
           Ride Vista Cabs offers reliable and comfortable transportation
           services for your travel needs. Our well-maintained cabs and
           professional drivers ensure a safe and comfortable journey. We provide
-          outstation services, roundtrip services, cab services to Leh, and
+          outstation services, roundtrip services, cab services to Manali, and
           various North Indian cities. Book with us today for affordable and
           hassle-free travel experiences.
         </p>
@@ -185,7 +185,7 @@
             class="flex justify-center text-center cursor-pointer text-gray-600 border-b md:border-b-0 hover:text-softRed md:w-1/3 tab"
             data-target="panel-2"
           >
-            <div class="py-5" data-target="panel-2">Cab Services to Leh</div>
+            <div class="py-5" data-target="panel-2">Cab Services to Manali</div>
           </div>
 
           <!-- Tab 3 -->
@@ -208,7 +208,7 @@
             <!-- Panel Image -->
             <div class="flex justify-center md:w-1/2">
               <img
-                src="{% static 'images/OutstationServices.svg' %}"
+                src="{% static 'images/OutstationServices.png' %}"
                 alt=""
                 class="relative z-10"
               />
@@ -226,12 +226,26 @@
                 your destination with ease. Our well-maintained cabs and
                 professional drivers will ensure a safe and comfortable journey.
               </p>
-              <div class="mx-auto md:mx-0">
+              <ul class="max-w-md text-center text-grayishBlue md:text-left">
+                <li>Sedan: Rs10/km</li>
+                <li>SUV: Rs13/km</li>
+                <li>Innova: Rs15/km</li>
+                <li>Crysta: Rs17/km</li>
+              </ul>
+              <div class="mx-auto md:mx-0 flex flex-row gap-2">
                 <a
-                  href="{% url 'ride'%}"
+                  href="{% url 'ride' %}"
                   class="px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
-                  >Book your ride</a
                 >
+                  Book your ride
+                </a>
+                <a
+                  href="https://api.whatsapp.com/send?phone=7006035209&amp;text=Hi,%20I%20am%20interested%20in%20your%20cab%20services.%20Can%20you%20provide%20me%20with%20more%20details?"
+                  target="_blank"
+                  class="px-6 py-3 mt-4 font-semibold text-white border-2 border-green rounded-lg md:inline-flex bg-green hover:bg-white hover:text-green hover:border-green hover:border-2 md:ml-2"
+                >
+                  Chat on WhatsApp
+                </a>
               </div>
             </div>
           </div>
@@ -243,7 +257,7 @@
             <!-- Panel Image -->
             <div class="flex justify-center md:w-1/2">
               <img
-                src="{% static 'images/CabServicesToLeh.svg' %}"
+                src="{% static 'images/CabServicesToManali.png' %}"
                 alt=""
                 class="relative z-10"
               />
@@ -253,19 +267,34 @@
               <h3
                 class="mt-14 text-3xl font-semibold text-center md:mt-0 md:text-left"
               >
-                Cab Services to Leh
+                Cab Services to Manali
               </h3>
               <p class="max-w-md text-center text-grayishBlue md:text-left">
-                Explore the scenic beauty of Leh with Ride Vista Cabs. Our cab
-                services to Leh offer a comfortable and convenient way to
-                discover the picturesque city and its surroundings.
+                Explore the scenic beauty of Manali with Ride Vista Cabs. Our
+                cab services to Manali offer a comfortable and convenient way to
+                discover the picturesque city and its surroundings. We offer the
+                following cab types at the listed rates:
               </p>
-              <div class="mx-auto md:mx-0">
+              <ul class="max-w-md text-center text-grayishBlue md:text-left">
+                <li>Sedan: Rs10/km</li>
+                <li>SUV: Rs13/km</li>
+                <li>Innova: Rs15/km</li>
+                <li>Crysta: Rs17/km</li>
+              </ul>
+              <div class="mx-auto md:mx-0 flex flex-row gap-2">
                 <a
                   href="{% url 'ride' %}"
                   class="px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
-                  >Book your ride</a
                 >
+                  Book your ride
+                </a>
+                <a
+                  href="https://api.whatsapp.com/send?phone=7006035209&amp;text=Hi,%20I%20am%20interested%20in%20your%20cab%20services.%20Can%20you%20provide%20me%20with%20more%20details?"
+                  target="_blank"
+                  class="px-6 py-3 mt-4 font-semibold text-white border-2 border-green rounded-lg md:inline-flex bg-green hover:bg-white hover:text-green hover:border-green hover:border-2 md:ml-2"
+                >
+                  Chat on WhatsApp
+                </a>
               </div>
             </div>
           </div>
@@ -277,7 +306,7 @@
             <!-- Panel Image -->
             <div class="flex justify-center md:w-1/2">
               <img
-                src="{% static 'images/cabServicesToNorthIndianCities.svg' %}"
+                src="{% static 'images/cabServicesToNorthIndianCities.png' %}"
                 alt=""
                 class="relative z-10"
               />
@@ -296,12 +325,26 @@
                 including Agra, Jaipur, and Amritsar, offer a hassle-free way to
                 explore historic landmarks and tourist destinations.
               </p>
-              <div class="mx-auto md:mx-0">
+              <ul class="max-w-md text-center text-grayishBlue md:text-left">
+                <li>Sedan: Rs10/km</li>
+                <li>SUV: Rs13/km</li>
+                <li>Innova: Rs15/km</li>
+                <li>Crysta: Rs17/km</li>
+              </ul>
+              <div class="mx-auto md:mx-0 flex flex-row gap-2">
                 <a
-                  href="{% url 'ride'%}"
-                  class="px-6 py-3 mt-4 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
-                  >Book your ride</a
+                  href="{% url 'ride' %}"
+                  class="px-6 py-3 mt-4 mr-5 font-semibold text-white border-2 border-white rounded-lg md:inline-flex bg-softBlue hover:bg-white hover:text-softBlue hover:border-softBlue hover:border-2"
                 >
+                  Book your ride
+                </a>
+                <a
+                  href="https://api.whatsapp.com/send?phone=7006035209&amp;text=Hi,%20I%20am%20interested%20in%20your%20cab%20services.%20Can%20you%20provide%20me%20with%20more%20details?"
+                  target="_blank"
+                  class="px-6 py-3 mt-4 font-semibold text-white border-2 border-green rounded-lg md:inline-flex bg-green hover:bg-white hover:text-green hover:border-green hover:border-2 md:ml-2"
+                >
+                  Chat on WhatsApp
+                </a>
               </div>
             </div>
           </div>
@@ -492,28 +535,26 @@
     <footer class="py-16 bg-veryDarkBlue">
       <!-- Footer Flex Container -->
       <div
-        class="container flex flex-col items-center justify-between mx-auto space-y-16 px-6 md:flex-row md:space-y-0"
+        class="container flex flex-col md:flex-row items-center justify-between mx-auto space-y-16 md:space-y-0 px-6"
       >
         <!-- Logo/Menu Container -->
         <div
-          class="flex flex-col items-center justify-between space-y-8 text-lg font-light md:flex-row md:space-y-0 md:space-x-14 text-grayishBlue"
+          class="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-14 text-lg font-light text-grayishBlue"
         >
           <img
             src="{% static 'images/RideVistacabs_FooterLogo.svg' %}"
             alt=""
             class="mb-1"
           />
-
           <a href="{% url 'home' %}" class="uppercase hover:text-softRed"
             >Services</a
           >
           <a href="{% url 'home' %}" class="uppercase hover:text-softRed"
             >FAQ</a
           >
-
           <!-- Address Container -->
           <div
-            class="flex flex-col items-center justify-between space-y-2 md:flex-row md:space-y-0 md:space-x-2"
+            class="flex flex-col md:flex-row items-center justify-between space-y-2 md:space-y-0 md:space-x-2"
           >
             <img
               src="{% static 'images/icon-location.svg' %}"
@@ -525,10 +566,9 @@
               (Chandigarh)
             </p>
           </div>
-
           <!-- Email Container -->
           <div
-            class="flex flex-col items-center justify-between space-y-2 md:flex-row md:space-y-0 md:space-x-2"
+            class="flex flex-col md:flex-row items-center justify-between space-y-2 md:space-y-0 md:space-x-2"
           >
             <img
               src="{% static 'images/icon-email.svg' %}"
@@ -536,15 +576,13 @@
               class="h-6 ficon"
             />
             <a
-              href="mailto:info@ridevistacabs.com"
+              href="mailto:dheerajmansotra6@gmail.com.com"
               class="text-grayishBlue hover:text-softRed"
-              >info@ridevista.com</a
-            >
+            ></a>
           </div>
         </div>
-
         <!-- Social Container -->
-        <div class="flex space-x-10">
+        <!-- <div class="flex items-center justify-center md:justify-end space-x-10">
           <a href="#">
             <img
               src="{% static 'images/icon-facebook.svg' %}"
@@ -559,7 +597,7 @@
               class="h-6 ficon"
             />
           </a>
-        </div>
+        </div> -->
       </div>
     </footer>
 

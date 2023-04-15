@@ -30,14 +30,14 @@ def ride(request):
         Pickup Location: {pickup_location}
         Number of travelers: {number_of_travelers}
         Cab Type: {cab_type}
-        pickup_date: {pickup_date}
+        Pickup Date: {pickup_date}
         Return date: {return_date}
 
         
         '''
         if subject and message:
             try:
-                send_mail(subject, message, email, ['joydenver01@gmail.com'])
+                send_mail(subject, message, email, ['joydenver01@gmail.com', 'dheerajmansotra6@gmail.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
             return HttpResponseRedirect('/success/')
